@@ -19,6 +19,9 @@ module.exports = (sequelize, DataTypes) => {
         estimated_population: {
             type: DataTypes.INTEGER
         },
+        currency: {
+            type: DataTypes.STRING
+        },
         date_established: { 
             type: DataTypes.DATE, 
             defaultValue: DataTypes.NOW 

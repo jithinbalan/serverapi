@@ -35,7 +35,7 @@ db.sequelize = sequelize
 
 db.cities = require('./cityModel')(sequelize, DataTypes)
 
-db.sequelize.sync({ force: true })
+db.sequelize.sync({ force: false })
 .then(() => {
     console.log('DB Synced & Connected!')
 })

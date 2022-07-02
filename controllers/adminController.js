@@ -14,6 +14,8 @@ const addCity = async (req, res) => {
         state: req.body.state,
         tourist_rating: req.body.touristrating,
         date_established: req.body.dateestablished,
+        estimated_population: req.body.estimatedpopulation,
+        currency: req.body.currency,
     }
 
     const city = await City.create(cityData)
@@ -23,7 +25,7 @@ const addCity = async (req, res) => {
 
 
 
-// 2. get all products
+// 2. get all cities
 
 const getAllCities = async (req, res) => {
 
@@ -32,7 +34,7 @@ const getAllCities = async (req, res) => {
 
 }
 
-// 3. get single product
+// 3. get single city
 
 const getOneCity = async (req, res) => {
     console.log("getOneCity")
@@ -42,7 +44,7 @@ const getOneCity = async (req, res) => {
 
 }
 
-// 4. update Product
+// 4. update city
 
 const updateCity = async (req, res) => {
 
@@ -61,7 +63,7 @@ const updateCity = async (req, res) => {
 
 }
 
-// 5. delete product by id
+// 5. delete city by id
 
 const deleteCity = async (req, res) => {
 
