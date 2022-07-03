@@ -1,6 +1,5 @@
 const db = require('../models')
 
-
 // Create Main Model
 const City = db.cities
 
@@ -30,17 +29,42 @@ const addCity = async (req, res) => {
 const getAllCities = async (req, res) => {
 
     let cities = await City.findAll({})
-    res.status(200).send(cities)
+    // console.log(typeof cities);
+    let CityApiData = [];
+    cities.forEach(city => {
+        CityApiData.push({
+            "id": city.id,
+            "city_name": city.city_name,
+            "country": city.country,
+            "state": city.state,
+            "tourist_rating": city.tourist_rating,
+            "estimated_population": city.estimated_population,
+            "currency": city.currency,
+            "date_established": city.date_established.toISOString().split('T')[0],
+        });
+    });
+    res.status(200).send(CityApiData)
 
 }
 
 // 3. get single city
 
 const getOneCity = async (req, res) => {
-    console.log("getOneCity")
     let id = req.params.id
     let city = await City.findOne({ where: { id: id }})
-    res.status(200).send(city)
+
+    let CityApiData = { };
+        CityApiData["id"] = city.id;
+        CityApiData["city_name"]= city.city_name;
+        CityApiData["country"]= city.country;
+        CityApiData["state"]= city.state;
+        CityApiData["tourist_rating"]= city.tourist_rating;
+        CityApiData["estimated_population"]= city.estimated_population;
+        CityApiData["currency"]= "city.currency";
+        CityApiData["date_established"]= city.date_established.toISOString().split('T')[0];
+
+    console.log(CityApiData)
+    res.status(200).send(CityApiData)
 
 }
 

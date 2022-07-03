@@ -1,6 +1,5 @@
 const express = require('express')
 const cors = require('cors')
-
 // Required Modules 
 const cityRouter = require('./routes/cityRouter')
 const adminRouter = require('./routes/adminRouter')
