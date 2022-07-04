@@ -29,7 +29,7 @@ app.use('/api/admin', adminRouter)
 
 //Port
 
-const PORT =  3001
+const PORT =  3306
 
 //Server
 
