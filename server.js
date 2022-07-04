@@ -29,8 +29,8 @@ app.use('/api/admin', adminRouter)
 
 //Port
 
-const PORT = process.env.PORT || 8080 //For Development only
-// const PORT = process.env.PORT || 3306 //For Production only
+// const PORT = process.env.PORT || 8080 //For Development only
+const PORT = process.env.PORT || 3306 //For Production only
 
 
 //Server
