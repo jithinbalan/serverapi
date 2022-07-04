@@ -29,10 +29,12 @@ app.use('/api/admin', adminRouter)
 
 //Port
 
-const PORT =  3306
+const PORT = process.env.PORT || 8080 //For Development only
+// const PORT = process.env.PORT || 3306 //For Production only
+
 
 //Server
 
-app.listen(process.env.PORT || PORT, () => {
+app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`)
 })
