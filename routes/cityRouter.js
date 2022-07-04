@@ -5,16 +5,6 @@ const adminController = require('../controllers/adminController.js')
 
 // Use Routers
 
-// Products Router
-router.post('/addCity', adminController.addCity)
-
-router.get('/allCities', adminController.getAllCities)
-
-
-router.get('/:id', adminController.getOneCity)
-
-router.put('/:id', adminController.updateCity)
-
-router.delete('/:id', adminController.deleteCity)
-
+// City Router
+router.get('/getCities/:cityName', adminController.getAllCitiesByName)
 module.exports = router

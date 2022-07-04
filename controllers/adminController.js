@@ -98,6 +98,25 @@ const deleteCity = async (req, res) => {
     res.status(200).send('City is deleted !')
 
 }
+// 6. Get AllCities by name
+const getAllCitiesByName = async (req, res) => {
+    let cities = await City.findAll({ where: { city_name: req.params.cityName }})
+    let CityApiData = [];
+    cities.forEach(city => {
+        CityApiData.push({
+            "id": city.id,
+            "city_name": city.city_name,
+            "country": city.country,
+            "state": city.state,
+            "tourist_rating": city.tourist_rating,
+            "estimated_population": city.estimated_population,
+            "currency": city.currency,
+            "date_established": city.date_established.toISOString().split('T')[0],
+        });
+    });
+    res.status(200).send(CityApiData)
+
+}
 
 module.exports = {
     addCity,
@@ -105,4 +124,5 @@ module.exports = {
     getOneCity,
     updateCity,
     deleteCity,
+    getAllCitiesByName
 }
