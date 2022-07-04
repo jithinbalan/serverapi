@@ -60,7 +60,7 @@ const getOneCity = async (req, res) => {
         CityApiData["state"]= city.state;
         CityApiData["tourist_rating"]= city.tourist_rating;
         CityApiData["estimated_population"]= city.estimated_population;
-        CityApiData["currency"]= "city.currency";
+        CityApiData["currency"]= city.currency;
         CityApiData["date_established"]= city.date_established.toISOString().split('T')[0];
 
     console.log(CityApiData)
