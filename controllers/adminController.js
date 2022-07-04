@@ -78,7 +78,7 @@ const updateCity = async (req, res) => {
         country: req.body.country,
         state: req.body.state,
         tourist_rating: req.body.touristrating,
-        currency: req.body.dateestablished,
+        currency: req.body.currency,
         date_established: req.body.dateestablished,
 
     }
